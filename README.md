@@ -20,7 +20,7 @@
 ```bash
 # Clone repository
 git clone https://github.com/sheshya/learning-game.git
-cd learning-game
+cd flutter-task
 
 # Install dependencies
 flutter pub get
@@ -76,12 +76,6 @@ try {
   showErrorSnackbar('Error: ${e.toString()}');
 }
 ```
-graph TD
-    A[UI Components] --> B[State Management]
-    B --> C[API Services]
-    C --> D[Local Cache]
-    D --> E[Analytics]
-    E --> F[Backend API]
     
 ## Roadmap
 ✅ Current Version 1.0
