@@ -10,8 +10,25 @@
 - 🔄 Real-time API integration
 
 ## Installation
+
+### Prerequisites
+- Flutter 3.7+ 
+- Dart 2.19+
+- Android Studio/Xcode for emulation
+- Node.js 16+ for API mocking
+
 ```bash
+# Clone repository
+git clone https://github.com/sheshya/learning-game.git
+cd learning-game
+
+# Install dependencies
 flutter pub get
+
+# Setup environment
+cp .env.example .env
+
+# Run development server
 flutter run
 ```
 
@@ -59,7 +76,13 @@ try {
   showErrorSnackbar('Error: ${e.toString()}');
 }
 ```
-
+graph TD
+    A[UI Components] --> B[State Management]
+    B --> C[API Services]
+    C --> D[Local Cache]
+    D --> E[Analytics]
+    E --> F[Backend API]
+    
 ## Roadmap
 ✅ Current Version 1.0
 - Basic authentication flow
