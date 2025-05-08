@@ -19,7 +19,7 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/sheshya/learning-game.git
+git clone https://github.com/Menatic/Sheshya-flutter-app.git
 cd flutter-task
 
 # Install dependencies
