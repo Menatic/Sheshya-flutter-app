@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: sheshya-flutter
+    env: static
+    buildCommand: flutter build web --release
+    staticPublishPath: "./build/web"
