@@ -7,6 +7,14 @@ A premium learning app featuring Apple-inspired design language with:
 - **Progressive Image Loading** with BlurHash
 - **Spatial Audio** integration
 
+## Since Render Deployment wasn't possible (screenshots of the app)
+
+![image](https://github.com/user-attachments/assets/abcf7c08-5d4b-42bd-b113-e8b2c8bd96fc)
+![image](https://github.com/user-attachments/assets/07138e5b-689f-44c1-8fbe-163cadd0a88a)
+![image](https://github.com/user-attachments/assets/d8052346-ffbb-4d95-8c1f-37e50c8d5820)
+![image](https://github.com/user-attachments/assets/17503019-a011-4751-8843-396bd423d530)
+
+
 ## ✨ Features
 ```mermaid
 graph TD
