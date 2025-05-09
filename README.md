@@ -28,8 +28,25 @@ cached_network_image: ^3.3.0
 flutter_blurhash: ^0.7.1
 
 ## Installation
+
+### Prerequisites
+- Flutter 3.7+ 
+- Dart 2.19+
+- Android Studio/Xcode for emulation
+- Node.js 16+ for API mocking
+
 ```bash
+# Clone repository
+git clone https://github.com/Menatic/Sheshya-flutter-app.git
+cd flutter-task
+
+# Install dependencies
 flutter pub get
+
+# Setup environment
+cp .env.example .env
+
+# Run development server
 flutter run
 ```
 
@@ -55,19 +72,23 @@ static Future<Map<String,dynamic>> fetchContent() async {
 - Progress tracking
 - Achievement badges
 
-## 🌐 Multi-Platform Support
- Platform Status Features iOS ✅ Full Cupertino Experience
- Android ✅ Material Fallback 
- macOS ✅ Mac Catalyst 
- Web ✅ Progressive Web App 
- Windows ✅ Fluent Design
+## Error Handling
+🛠️ Strategies Include:
+- Network error recovery
+- Token refresh flow
+- Local data caching
+```dart
+try {
+  // API operations
+} catch (e) {
+  showErrorSnackbar('Error: ${e.toString()}');
+}
+```
 
-
-## 📅 Roadmap
-- SwiftUI Integration
-- VisionOS Support
-- Siri Shortcuts
-- Live Activities
+## Roadmap
+✅ Current Version 1.0
+- Basic authentication flow
+- Core gameplay loop
 
 🔜 Future Features
 - Multiplayer challenges
