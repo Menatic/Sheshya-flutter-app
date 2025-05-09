@@ -1,60 +1,40 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
 class ApiService {
-  static const String _baseUrl = 'https://sheshya-backend-f4gndddgadfhc3fy.eastus-01.azurewebsites.net';
-  static const String _contentUrl = 'https://ai-qna-gvhkarb0faf3fvhs.eastus-01.azurewebsites.net';
-
-  static Future<String?> login({
-    required String email,
-    required String otp,
-  }) async {
-    try {
-      final response = await http.post(
-        Uri.parse('$_baseUrl/loginByEmailOrPhone'),
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+  static Future<Map<String, dynamic>> fetchCourseContent() async {
+    // Simulate network delay
+    await Future.delayed(const Duration(seconds: 1));
+    
+    return {
+      'questions': [
+        {
+          'type': 'fill',
+          'sentence': 'The capital of France is _______.',
+          'answer': 'Paris',
+          'hint': 'European cultural capital',
+          'animation': 'assets/lottie/paris.json'
         },
-        body: jsonEncode({
-          'email': email,
-          'phone': '',
-          'otp': otp,
-        }),
-      );
-
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        return data['token'] ?? data['accessToken'];
-      } else {
-        throw Exception('Login failed: ${response.statusCode}');
-      }
-    } catch (e) {
-      throw Exception('Login error: ${e.toString()}');
-    }
-  }
-
-  static Future<Map<String, dynamic>> fetchCourseContent({
-    required String token,
-    required String className,
-  }) async {
-    try {
-      final response = await http.post(
-        Uri.parse('$_contentUrl/createCourseContent'),
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer $token',
+        {
+          'type': 'image_match',
+          'images': [
+            'https://images.unsplash.com/photo-1561037404-61cd46aa615b',
+            'https://images.unsplash.com/photo-1558402529-d2638a7023e9',
+            'https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb'
+          ],
+          'options': ['Golden Retriever', 'Siamese Cat', 'Macaw'],
+          'blurHash': ['LKO2?U%2Tw=w]~RBV@Ri000ORjfP', 'LFC#y%wc_3NG00IU%L%M00Mx%1R*', 'LGF5]+Yk^6#M@-5c,1J5@[or[Q6.'],
+          'aspectRatio': 1.5
         },
-        body: jsonEncode({'className': className}),
-      );
-
-      if (response.statusCode == 200) {
-        return jsonDecode(response.body) as Map<String, dynamic>;
-      } else {
-        throw Exception('Content fetch failed: ${response.statusCode}');
-      }
-    } catch (e) {
-      throw Exception('Content fetch error: ${e.toString()}');
-    }
+        {
+          'type': 'audio',
+          'audioUrl': 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+          'options': ['Piano', 'Guitar', 'Drums', 'Violin'],
+          'waveformData': [0.2, 0.8, 0.4, 0.6, 0.9]
+        },
+        {
+          'type': 'rearrange',
+          'words': ['Hello', 'world', 'how', 'are', 'you', 'today'],
+          'correctOrder': ['Hello', 'world', 'how', 'are', 'you', 'today']
+        }
+      ]
+    };
   }
 }
