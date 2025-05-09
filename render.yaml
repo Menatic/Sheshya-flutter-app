@@ -3,7 +3,8 @@ services:
     name: sheshya-flutter
     env: static
     buildCommand: |
+      flutter config --enable-web
       flutter pub get
-      flutter build web --release --dart-define=FLUTTER_WEB_CANVASKIT_URL=/canvaskit/
+      flutter build web --release --dart-define=FLUTTER_WEB_CANVASKIT_URL=/canvaskit/ --web-renderer canvaskit
     staticPublishPath: "./build/web"
     nodeVersion: 18.x
