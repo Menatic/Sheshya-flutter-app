@@ -51,9 +51,6 @@ cd flutter-task
 # Install dependencies
 flutter pub get
 
-# Setup environment
-cp .env.example .env
-
 # Run development server
 flutter run
 ```
